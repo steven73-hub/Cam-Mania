@@ -9,7 +9,7 @@
         include "../lib/config.php";
         include "../lib/koneksi.php";
 
-        $idkategori=$_GET['id_kategori'];
+        $idkategori=$_GET['kategori'];
         $queryEdit = mysqli_query($koneksi, "SELECT * FROM kategori WHERE id_kategori='$idkategori' ");
 
         $hasilQuery = mysqli_fetch_array($queryEdit);

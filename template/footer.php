@@ -52,14 +52,6 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer  -->
-
-    <!-- Start copyright  -->
-    <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
-    </div>
-    <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
@@ -79,3 +71,12 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="asset/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="asset/plugins/datepicker/bootstrap-datepicker.js"></script>
+    
+
+
+    

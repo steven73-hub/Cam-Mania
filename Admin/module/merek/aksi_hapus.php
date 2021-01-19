@@ -23,7 +23,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
     } else {
         echo "
         <script> 
-            window.location = '../../../Admin/gagal.php?gagal=hapusMerek';
+            window.location = '$admin_url'+'adminweb.php?module=merek';
         </script>";
     }
 }

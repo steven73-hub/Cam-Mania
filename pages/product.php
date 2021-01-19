@@ -36,20 +36,19 @@
                                                     <div class="type-lb">
                                                         <p class="new">Stok: <?php echo $r['stok_barang'] ?></p>
                                                     </div>
-                                                    <img src="admin/upload/<?php echo $r['gambar'] ?>" class="img-fluid" alt="Image">
+                                                    <img src="Admin/upload/<?php echo $r['gambar'] ?>" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <!-- <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li> -->
+                                                            <li><a href="" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                            
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="aksi/aksi_keranjang.php?id_produk=<?php echo $r['id_produk']; ?>&harga=<?php echo $r['harga_sewa'] ?>">Tambahkan</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
                                                     <h4><center><?php echo $r['nama_produk'] ?></center></h4>
                                                     <h5> Rp. <?php echo number_format($r['harga_sewa'])?></h5>
-                                                    <!-- <button>view</button> -->
+
                                                 </div>
                                             </div>
                                         </div>
@@ -76,8 +75,7 @@
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                <!-- <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li> -->
+                                                               
                                                             </ul>
 
                                                         </div>
@@ -90,7 +88,7 @@
                                                     <h5>Rp. <?php echo number_format($r['harga_sewa'])?></h5>
                                                     <!-- <h5> <del>$ 60.00</del> $40.79</h5> -->
                                                     <p><?php echo $r['deskripsi'] ?></p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                    <a class="btn hvr-hover" href="aksi/aksi_keranjang.php?id_produk=<?php echo $r['id_produk']; ?>&harga=<?php echo $r['harga_sewa'] ?>">Tambahkan</a>
                                                 </div>
                                             </div>
                                             

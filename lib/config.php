@@ -1,6 +1,6 @@
 <?php
 
-$base_url = "http://localhost/sewa/";
-$admin_url = "http://localhost/sewa/Admin/";
+$base_url = "http://localhost:8080/sewa/";
+$admin_url = "http://localhost:8080/sewa/Admin/";
 
 ?>

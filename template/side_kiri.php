@@ -83,8 +83,8 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#" method="post">
-                                <input class="form-control" placeholder="Search here..." type="text">
-                                <button type="submit"> <i class="fa fa-search"></i> </button>
+                                <!-- <input class="form-control" placeholder="Search here..." type="text">
+                                <button type="submit"> <i class="fa fa-search"></i> </button> -->
                             </form>
                         </div>
                         
@@ -97,7 +97,7 @@
                                 $q = mysqli_query($koneksi, "select * from kategori");
                                 while($r=mysqli_fetch_array($q)){
                                 ?>
-                                <a href="#" class="list-group-item list-group-item-action"> <?php echo $r['nama_kategori']?> </small></a>
+                                <a href="kategori.php?kategori=<?php echo $r['id_kategori']?>" class="list-group-item list-group-item-action"> <?php echo $r['nama_kategori']?> </small></a>
                                 <?php } ?>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                         while($r=mysqli_fetch_array($q)){
                                         ?>
 
-                                        <a href="#" class="list-group-item list-group-item-action"><?php echo $r['nama_merek']?></a>
+                                        <a href="merek.php?merek=<?php echo $r['id_merek']?>" class="list-group-item list-group-item-action"><?php echo $r['nama_merek']?></a>
                                         <?php } ?>
                                     
                                     </li>

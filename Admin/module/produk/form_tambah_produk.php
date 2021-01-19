@@ -48,7 +48,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 		<div class="row">
 			<div class="col-sm-3"><!--left col-->
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" id="box">
-        <input type="file" class="text-center center-block file-upload" name="gambar" id="input" style="display: ;">
+        <input type="file" class="text-center center-block file-upload" name="gambar" id="input" style="display: ;" required>
 		<br><br>
 		
 		<hr>

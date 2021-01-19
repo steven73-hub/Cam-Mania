@@ -11,9 +11,12 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
     include "../../../lib/config.php";
     include "../../../lib/koneksi.php";
 
-    $idkategori = $_GET['id_kategori'];
+    $idKategori = $_GET['kategori'];
+
+    // echo $idkategori;
+    // exit();
     $queryHapus = mysqli_query($koneksi, 
-        "DELETE FROM kategori WHERE id_kategori ='$idkategori'");
+        "DELETE FROM kategori WHERE id_kategori ='$idKategori'");
 
     if ($queryHapus) {
         echo "
@@ -23,7 +26,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
     } else {
         echo "
         <script> 
-            window.location = '../../../Admin/gagal.php?gagal=hapuskategori';
+            window.location = '$admin_url'+'adminweb.php?module=kategori';
         </script>";
     }
 }

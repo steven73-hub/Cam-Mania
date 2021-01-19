@@ -1,55 +1,127 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login Template</title>
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/login.css">
+	<meta charset="utf-8">
+	<title>Welcome To</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/sourcesanspro-font.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style1.css"/>
 </head>
-<body>
-  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-      <div class="card login-card">
-        <div class="row no-gutters">
-          <div class="col-md-5">
-            <img src="images/login.jpg" alt="login" class="login-card-img">
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <!-- <div class="brand-wrapper">
-                <img src="assets/images/logo.svg" alt="logo" class="logo">
-              </div> -->
-              <p class="login-card-description">Login</p>
-              <form action="aksi/aksi_login.php" method="post">
-                  <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" id="email" class="form-control" placeholder="Username">   
-                  </div>
-                  <div class="form-group mb-4">
-                    <label>Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                  </div>
-                  <button type="submit" class="btn btn-block login-btn mb-4">Login</button>
-                  <!-- <button class="btn btn-block login-btn mb-4" type="button">Login</button> -->
-              </form>
-                <a href="#!" class="forgot-password-link">Forgot password?</a>
-                <p class="login-card-footer-text">Dont Have Account? <a href="register.php" class="text-reset">Register</a></p>
-                <nav class="login-card-footer-nav">
-                  <a href="#!">Terms of use.</a>
-                  <a href="#!">Privacy policy</a>
-                </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
+<body class="form-v8">
+	<div class="page-content">
+		<div class="form-v8-content">
+			<div class="form-left">
+				<img src="images/123.jpg" alt="form">
+			</div>
+			<div class="form-right">
+			<h1><center>Welcome To Cam Mania<span class="label label-default"></span></center></h1>
+				<div class="tab">
+				
+					<div class="tab-inner">
+						<button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Login</button>
+					</div>
+					<div class="tab-inner">
+						<button class="tablinks" onclick="openCity(event, 'sign-in')">Daftar</button>
+					</div>
+				</div>
+				<form class="form-detail" action="aksi/aksi_login.php" method="post">
+					<div class="tabcontent" id="sign-up">
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="username" id="full_name" class="input-text" required>
+								<span class="label">Username</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="password" name="password" id="password" class="input-text" required>
+								<span class="label">Password</span>
+								<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row-last">
+							<input type="submit" name="register" class="register" value="Login">
+						</div>
+					</div>
+				</form>
+				<form class="form-detail" action="aksi/aksi_daftar.php" method="post">
+					<div class="tabcontent" id="sign-in">
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="username" id="full_name_1" class="input-text" required>
+								<span class="label">Username</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="password" name="password" id="password_1" class="input-text" required>
+								<span class="label">Password</span>
+								<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="nama" id="full_name_1" class="input-text" required>
+								<span class="label">Nama Lengkap</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="email" id="your_email_1" class="input-text" required>
+								<span class="label">E-Mail</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="alamat" id="full_name_1" class="input-text" required>
+								<span class="label">Alamat</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="no_telp" id="full_name_1" class="input-text" required>
+								<span class="label">No Telpon</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						
+						<div class="form-row-last">
+							<input type="submit" name="register" class="register" value="Daftar">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function openCity(evt, cityName) {
+		    var i, tabcontent, tablinks;
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

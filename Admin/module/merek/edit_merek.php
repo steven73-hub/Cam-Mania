@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+
 	if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 		echo "<center> untuk mengakses modul, anda harus login</br>";
 		echo "<ahref=../../index.php?<b>Login</b></a></center>";
@@ -56,7 +56,7 @@
 		<div class="row">
 			<header class="main__header col-md-12 mb-2">
 				<div class="main__title">
-					<h4>Dashboard <?php echo $username ?></h4>
+					<h4>Dashboard</h4>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
 						<li class="breadcrumb-item active">Kategori</li>

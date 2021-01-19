@@ -28,8 +28,7 @@ if (empty($_SESSION['username'])AND empty ($_SESSION['passuser'])) {
         $koneksi,
         "UPDATE `akun` SET 
                         
-                        `status_akun` = '$status' WHERE `akun`.`id_user` = $id_user; "
-    );
+                        `status_akun` = '$status' WHERE `akun`.`id_user` = $id_user; ");
 
     if ($queryEdit) {
         echo    "<script>

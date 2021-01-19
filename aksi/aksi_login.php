@@ -11,20 +11,24 @@ $resultquery = mysqli_num_rows($querylogin);
 
 $result = mysqli_fetch_array($querylogin);
 
-echo $username;
-echo $password;
+// echo $username;
+// echo $password;
 
 if($resultquery>0){
     $level = $result['level'];
     $status = $result['status_akun'];
-    
+
 	if ($level == '3' && $status == 'aktif') {
             session_start();
             $_SESSION['iduser'] = $result['id_user'];
-            header('location:../index.php');
+            header("location: ../index.php");
     }else{
-        echo "<script> alert('Maaf akun Anda tidak dapat diakses, silahkan menghubungi admin'); window.location='$base_url'+'login.php';</script>";
-        }
+        echo "
+        <script> 
+		    alert('maaf akun anda tidak dapat di akses atau sedang di blokir. Silahkan menghubungi Admin, Terima Kasih'); 
+			window.location = '../login.php';
+        </script>";
+    }
 }else {
 	echo "
 		<script> 

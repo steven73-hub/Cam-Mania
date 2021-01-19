@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+
 	if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 		echo "<center> untuk mengakses modul, anda harus login</br>";
 		echo "<ahref=../../index.php?<b>Login</b></a></center>";
@@ -47,7 +47,7 @@
 		<div class="row">
 			<header class="main__header col-md-12 mb-2">
 				<div class="main__title">
-					<h4>Dashboard <?php echo $username ?></h4>
+					<h4>Dashboard </h4>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
 						<li class="breadcrumb-item active">Kategori</li>
@@ -81,9 +81,9 @@
 								<td><?php echo $mer['nama_merek']; ?></td>
 								<td>
                                 <div class = "btn-group">
-                                    <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_merek&id_merek=
+                                    <a href="adminweb.php?module=edit_merek&id_merek=
                                     <?php echo $mer['id_merek']; ?>" class="btn btn-warning"><i class='fa fa-pencil'></i></button></a>
-                                    <a href="<?php echo $admin_url; ?>module/merek/aksi_hapus.php?id_merek=
+                                    <a href="module/merek/aksi_hapus.php?id_merek=
                                     <?php echo $mer['id_merek']; ?>" onClick="return confirm('anda yakin ingin menghapus data ini?')" 
                                     class="btn btn-danger"><i class='fa fa-trash'></i></button></a>
                                 </div>

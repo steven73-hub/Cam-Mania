@@ -52,82 +52,97 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 			</div>				
 		</header>
 	<div class="row">
-	<div class="mb-3 col-md-6 col-lg-4">
-				<section class="info-box info-box--blue">
-					<div class="info-box__icon"><span class="fa fa-shopping-cart"></span></div>
-					<div class="info-box__description">
-						<h2>Products</h2>
-						<h1>520</h1>
-						<time>12 Minutes ago</time>
-					</div>
-					<a title="Detail Products" class="info-box__btn-detail" href=""><span class="fa fa-arrow-right"></span></a>
-				</section>
-			</div>
+	
 
 			<div class="mb-3 col-md-6 col-lg-4">
 				<section class="info-box info-box--green">
+				<?php
+                    $sql = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM akun where level='3' and status_akun='aktif' ");
+                    $member = mysqli_fetch_assoc($sql);
+                ?>
+
 					<div class="info-box__icon"><span class="fa fa-users"></span></div>
 					<div class="info-box__description">
 						<h2>Members</h2>
-						<h1>700</h1>
-						<time>30 Minutes ago</time>
+						<h1><?= $member['total'] ?></h1>
+						
 					</div>
-					<a class="info-box__btn-detail" href=""><span class="fa fa-arrow-right"></span></a>
+					<a class="info-box__btn-detail" href="adminweb.php?module=member"><span class="fa fa-arrow-right"></span></a>
 				</section>
 			</div>
 			<div class="mb-3 col-md-6 col-lg-4">
 				<section class="info-box info-box--orange">
+				<?php
+                    $sql = mysqli_query($koneksi, "SELECT COUNT(*) AS booking FROM sewa where status_sewa='booking' ");
+                    $booking = mysqli_fetch_assoc($sql);
+                ?>
+
+
 					<div class="info-box__icon"><span class="fa fa-shopping-cart"></span></div>
 					<div class="info-box__description">
-						<h2>Orders</h2>
-						<h1>120</h1>
-						<time>2 Minutes ago</time>
+						<h2>Booking</h2>
+						<h1><?= $booking['booking'] ?></h1>
+						
 					</div>
 					<a class="info-box__btn-detail" href=""><span class="fa fa-arrow-right"></span></a>
 				</section>
 			</div>
+			<div class="mb-3 col-md-6 col-lg-4">
+				<section class="info-box info-box--red">
+				<?php
+                    $sql = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM sewa where status_sewa='disewa' ");
+                    $sewa = mysqli_fetch_assoc($sql);
+                ?>
+					<div class="info-box__icon"><span class="fa fa-shopping-cart"></span></div>
+					<div class="info-box__description">
+						<h2>Di Sewa</h2>
+						<h1><?= $sewa['total'] ?></h1>
+						
+					</div>
+					<a class="info-box__btn-detail" href=""><span class="fa fa-arrow-right"></span></a>
+				</section>
+			</div>
+			
 
 	<div class="col-12 mb-4">
 				<section class="main__box">
+				
 					<h5>Data Penyewa</h5>
 					<hr>
 					<table class="table table--blue mb-3">
 						<thead>
 							<tr>
 								<th colspan="2">Action</th>
-								<th>Product Name</th>
-								<th>Price</th>
+								<th>Nama</th>
+								<th>Tanggal Sewa</th>
+								<th>Tanggal Pengembalian</th>
+								<th>Durasi Sewa</th>
+								<th>Detail</th>
 							</tr>
 						</thead>
 						<tbody>
+						<?php
+                            
+                            $kueri_sewa = mysqli_query($koneksi, "SELECT DISTINCT id_user, tgl_sewa,tgl_kembali, durasi_sewa from sewa");
+                            while ($pro = mysqli_fetch_array($kueri_sewa)) {
+							$user_id = $pro['id_user'];
+                        ?>   
 							<tr>
 								<td width="10"><a href="" class="text-hover-red"><span class="fa fa-trash"></span></a></td>
 								<td width="10"><a href=""><span class="fa fa-edit"></span></a></td>
-
-								<td>Example handphone 1</td>
-								<td>Rp 2.200.000</td>
+						
+                            <?php
+                            $kueri = mysqli_query($koneksi, "SELECT DISTINCT nama FROM `akun` WHERE id_user='$user_id'");
+                            while ($akun = mysqli_fetch_array($kueri)) {
+                            ?>
+								<td><?= $akun['nama'] ?></td>
+							<?php } ?>
+								<td><?= $pro['tgl_sewa'] ?></td>
+								<td><?= $pro['tgl_kembali'] ?></td>
+								<td><?= $pro['durasi_sewa'] ?></td>
+								<td width="30"><a href="<?php ?>" class="btn btn--red">Detail</a></td>
 							</tr>
-							<tr>
-								<td width="10"><a href="" class="text-hover-red"><span class="fa fa-trash"></span></a></td>
-								<td width="10"><a href=""><span class="fa fa-edit"></span></a></td>
-
-								<td>Example handphone 2</td>
-								<td>Rp 2.000.000</td>
-							</tr>
-							<tr>
-								<td width="10"><a href="" class="text-hover-red"><span class="fa fa-trash"></span></a></td>
-								<td width="10"><a href=""><span class="fa fa-edit"></span></a></td>
-
-								<td>Example handphone 3</td>
-								<td>Rp 1.200.000</td>
-							</tr>
-							<tr>
-								<td width="10"><a href="" class="text-hover-red"><span class="fa fa-trash"></span></a></td>
-								<td width="10"><a href=""><span class="fa fa-edit"></span></a></td>
-
-								<td>Example handphone 4</td>
-								<td>Rp 500.000</td>
-							</tr>
+						<?php } ?>
 						</tbody>
 					</table>
 				</section>

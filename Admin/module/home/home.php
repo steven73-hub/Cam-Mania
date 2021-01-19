@@ -125,68 +125,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
 			</div>
 
 			<!-- table -->
-			<div class="mb-3 col-12">
-				<section class="main__box">
-					<h5>Table Product</h5>
-					<hr>
-					<div class="form-row">
-						<div class="col-12 col-lg-6">
-                            <select name="limit" class="form form--focus-blue mt-0 mb-3">
-                                <option>Limit ...</option>
-                            </select>
-                        </div>
-						<div class="input-group col-12 col-lg-6 mt-0 mb-3">
-							<input type="text" class="form form--focus-blue" name="search" placeholder="Search with Name ...">
-							<div class="input-group__append">
-								<a href="#" class="btn btn--blue"><span class="fa fa-search"></span></a>
-							</div>
-						</div>
-					</div>					
-					<table class="table table--gray mb-3">
-						<thead>
-							<tr>
-								<th width="10">No</th>
-								<th>First Name</th>
-								<th>Last Name</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="text-center">1</td>
-								<td>Dian</td>
-								<td>Pranata</td>
-							</tr>
-							<tr>
-								<td class="text-center">2</td>
-								<td>Adelina</td>
-								<td>Damayanti</td>
-							</tr>
-							<tr>
-								<td class="text-center">3</td>
-								<td>Reza Sariful</td>
-								<td>Fikri</td>
-							</tr>
-							<tr>
-								<td class="text-center">4</td>
-								<td>Syawal</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
-					<ul class="pagination pagination--blue">
-						<li class="pagination__item pagination__item--disabled">
-							<a href="#">Previous</a>
-						</li>
-						<li class="pagination__item"><a href="#">1</a></li>
-						<li class="pagination__item pagination__item--active">
-							<a href="#">2</a>
-						</li>
-						<li class="pagination__item"><a href="#">3</a></li>
-						<li class="pagination__item">
-							<a href="#">Next</a>
-						</li>
-					</ul>
-				</section><!-- main__box -->
+			
 			</div>
 		</div><!-- row -->
 	</main>

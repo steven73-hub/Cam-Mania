@@ -1,7 +1,7 @@
 <?php
 
-
 session_start();
+// $user = $_SESSION['iduser'];
 include "lib/koneksi.php";
 // include "../lib/config.php";
 

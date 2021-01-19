@@ -75,16 +75,16 @@
 								$kueri_Kategori= mysqli_query($koneksi, "select * from kategori");
 								while($kat=mysqli_fetch_array($kueri_Kategori))
 								{
+									$id = $kat['id_kategori'];
+									$nama = $kat['nama_kategori'];
 								?>
 							<tr>
-								<td><?php echo $kat['id_kategori']; ?></td>
-								<td><?php echo $kat['nama_kategori']; ?></td>
+								<td><?php echo $id; ?></td>
+								<td><?php echo $nama; ?></td>
 								<td>
                                 <div class = "btn-group">
-                                    <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_kategori&id_kategori=
-                                    <?php echo $kat['id_kategori']; ?>" class="btn btn-warning"><i class='fa fa-pencil'></i></button></a>
-                                    <a href="<?php echo $admin_url; ?>module/kategori/aksi_hapus.php?id_kategori=
-                                    <?php echo $kat['id_kategori']; ?>" onClick="return confirm('anda yakin ingin menghapus data ini?')" 
+                                    <a href="<?php echo $admin_url; ?>adminweb.php?module=edit_kategori&kategori=<?php echo $id; ?>" class="btn btn-warning"><i class='fa fa-pencil'></i></button></a>
+                                    <a href="<?php echo $admin_url; ?>module/kategori/aksi_hapus.php?kategori=<?php echo $id; ?>" onClick="return confirm('anda yakin ingin menghapus data ini?')" 
                                     class="btn btn-danger"><i class='fa fa-trash'></i></button></a>
                                 </div>
                             	</td>
